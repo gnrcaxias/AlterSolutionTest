@@ -23,6 +23,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{B4ED17C1-694
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{EAAB7E58-B42C-4C72-A6F1-878D1609585E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{8FECA59C-9017-494B-95EF-6B19C5B10E20}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Avaliação Técnica Csharp - Resposta.pdf = ..\..\Avaliação Técnica Csharp - Resposta.pdf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
