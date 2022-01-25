@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{EAAB7E58-B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{8FECA59C-9017-494B-95EF-6B19C5B10E20}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\Avaliação Técnica Csharp - Resposta.pdf = ..\..\Avaliação Técnica Csharp - Resposta.pdf
+		Documents\Avaliação Técnica Csharp - Resposta.pdf = Documents\Avaliação Técnica Csharp - Resposta.pdf
 	EndProjectSection
 EndProject
 Global
