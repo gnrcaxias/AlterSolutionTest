@@ -20,7 +20,7 @@ namespace AlterSolutionTest.App.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> GetProduct(int id)
         {
             var Product = await _ProductService.GetProductById(id);
 
@@ -29,7 +29,7 @@ namespace AlterSolutionTest.App.Controllers
 
         [HttpGet]
         [Route("GetPage")]
-        public async Task<IActionResult> GetPage(int page = 1, int countReg = 10)
+        public async Task<IActionResult> GetProductPage(int page = 1, int countReg = 10)
         {
             var listProduct = await _ProductService.GetPage(page, countReg);
 
@@ -37,7 +37,7 @@ namespace AlterSolutionTest.App.Controllers
         }
 
         [HttpDelete]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteProduct(int id)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace AlterSolutionTest.App.Controllers
 
         [Route("Insert")]
         [HttpPost]
-        public async Task<IActionResult> Insert([FromBody] Product Product)
+        public async Task<IActionResult> InsertProduct([FromBody] Product Product)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace AlterSolutionTest.App.Controllers
 
         [Route("Update")]
         [HttpPut]
-        public async Task<IActionResult> Update([FromBody] Product Product)
+        public async Task<IActionResult> UpdateProduct([FromBody] Product Product)
         {
             try
             {
@@ -85,7 +85,7 @@ namespace AlterSolutionTest.App.Controllers
 
         [Route("Patch")]
         [HttpPatch]
-        public async Task<IActionResult> Patch(int id, [FromBody] JsonPatchDocument<Product> patchProduct)
+        public async Task<IActionResult> PatchProduct(int id, [FromBody] JsonPatchDocument<Product> patchProduct)
         {
             var Product = await _ProductService.GetProductById(id);
 

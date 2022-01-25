@@ -28,9 +28,9 @@ namespace AlterSolutionTest.Test
         public async Task MustGetProductById()
         {
             var Product = new Domain.Entities.Product() { Description = "Produto 01", Active = 1, Code = "C01", Dimensions = "1x1", Reference = "R01", Price = 10, InventoryBalance = 10, Category = new Category { Description = "Categoria Teste", Active = 1 } };
-            await _ProductController.Insert(Product);
+            await _ProductController.InsertProduct(Product);
 
-            var actual = (_ProductController.Get(Product.Id).Result as OkObjectResult).StatusCode;
+            var actual = (_ProductController.GetProduct(Product.Id).Result as OkObjectResult).StatusCode;
             var expected = new OkResult().StatusCode;
 
             Assert.Equal(expected, actual);
@@ -40,7 +40,7 @@ namespace AlterSolutionTest.Test
         public async Task MustCreateProduct()
         {
             var Product = new Domain.Entities.Product() { Description = "Produto 01", Active = 1, Code = "C01", Dimensions = "1x1", Reference = "R01", Price = 10, InventoryBalance = 10, Category = new Category { Description = "Categoria Teste", Active = 1 } };
-            var actual = (_ProductController.Insert(Product).Result as OkObjectResult).StatusCode;
+            var actual = (_ProductController.InsertProduct(Product).Result as OkObjectResult).StatusCode;
             var expected = new OkResult().StatusCode;
 
             Assert.Equal(expected, actual);
@@ -50,11 +50,11 @@ namespace AlterSolutionTest.Test
         public async Task MustUpdateProduct()
         {
             var Product = new Domain.Entities.Product() { Description = "Produto 01", Active = 1, Code = "C01", Dimensions = "1x1", Reference = "R01", Price = 10, InventoryBalance = 10, Category = new Category { Description = "Categoria Teste", Active = 1 } };
-            await _ProductController.Insert(Product);
+            await _ProductController.InsertProduct(Product);
 
             Product.Description = string.Concat("Product", new Random().Next(1, 10000).ToString());
 
-            var act = (_ProductController.Update(Product).Result as OkObjectResult).StatusCode;
+            var act = (_ProductController.UpdateProduct(Product).Result as OkObjectResult).StatusCode;
             var exp = new OkResult().StatusCode;
 
             Assert.Equal(exp, act);
@@ -64,9 +64,9 @@ namespace AlterSolutionTest.Test
         public async Task MustDeleteProduct()
         {
             var Product = new Domain.Entities.Product() { Description = "Produto 01", Active = 1, Code = "C01", Dimensions = "1x1", Reference = "R01", Price = 10, InventoryBalance = 10, Category = new Category { Description = "Categoria Teste", Active = 1 } };
-            await _ProductController.Insert(Product);
+            await _ProductController.InsertProduct(Product);
 
-            var act = _ProductController.Delete(Product.Id).Result as OkObjectResult;
+            var act = _ProductController.DeleteProduct(Product.Id).Result as OkObjectResult;
             var exp = new OkResult().StatusCode;
 
             Assert.Equal(exp, act.StatusCode);

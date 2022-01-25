@@ -19,22 +19,22 @@ namespace AlterSolutionTest.Service
         public async Task<int> CreateCategory(Category category)
         {
             category.Id = 0;
-            return await _categoryRepository.Insert(category);
+            return await _categoryRepository.InsertCategory(category);
         }
 
         public async Task<Category> GetCategoryById(int id)
         {
-            return await _categoryRepository.Get(id);
+            return await _categoryRepository.GetCategoryById(id);
         }
 
         public async Task<int> DeleteCategory(int id)
         {
-            return await _categoryRepository.Delete(id);
+            return await _categoryRepository.DeleteCategory(id);
         }
 
         public async Task<int> UpdateCategory(Category category)
         {
-            return await _categoryRepository.Update(category);
+            return await _categoryRepository.UpdateCategory(category);
         }
 
         public async Task<IEnumerable<Category>> GetPage(int page, int pageSize)

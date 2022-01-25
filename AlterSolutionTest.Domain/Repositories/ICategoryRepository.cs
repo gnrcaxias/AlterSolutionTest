@@ -9,10 +9,10 @@ namespace AlterSolutionTest.Domain.Repositories
 {
     public interface ICategoryRepository
     {
-        Task<int> Delete(int id);
-        Task<int> Insert(Category entity);
-        Task<int> Update(Category entity);
-        Task<Category> Get(int id);
+        Task<int> DeleteCategory(int id);
+        Task<int> InsertCategory(Category entity);
+        Task<int> UpdateCategory(Category entity);
+        Task<Category> GetCategoryById(int id);
         Task<IEnumerable<Category>> GetPage(int page, int pageSize);
     }
 }

@@ -20,7 +20,7 @@ namespace AlterSolutionTest.App.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> GetCategory(int id)
         {
             var category = await _categoryService.GetCategoryById(id);
 
@@ -29,7 +29,7 @@ namespace AlterSolutionTest.App.Controllers
 
         [HttpGet]
         [Route("GetPage")]
-        public async Task<IActionResult> GetPage(int page = 1, int countReg = 10)
+        public async Task<IActionResult> GetCategoryPage(int page = 1, int countReg = 10)
         {
             var listCategory = await _categoryService.GetPage(page, countReg);
 
@@ -37,7 +37,7 @@ namespace AlterSolutionTest.App.Controllers
         }
 
         [HttpDelete]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteCategory(int id)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace AlterSolutionTest.App.Controllers
 
         [Route("Insert")]
         [HttpPost]
-        public async Task<IActionResult> Insert([FromBody] Category category)
+        public async Task<IActionResult> Insertategory([FromBody] Category category)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace AlterSolutionTest.App.Controllers
 
         [Route("Update")]
         [HttpPut]
-        public async Task<IActionResult> Update([FromBody] Category category)
+        public async Task<IActionResult> UpdateCategory([FromBody] Category category)
         {
             try
             {
@@ -85,7 +85,7 @@ namespace AlterSolutionTest.App.Controllers
 
         [Route("Patch")]
         [HttpPatch]
-        public async Task<IActionResult> Patch(int id, [FromBody] JsonPatchDocument<Category> patchCategory)
+        public async Task<IActionResult> PatchCategory(int id, [FromBody] JsonPatchDocument<Category> patchCategory)
         {
             var category = await _categoryService.GetCategoryById(id);
 

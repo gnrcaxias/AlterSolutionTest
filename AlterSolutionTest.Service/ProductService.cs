@@ -19,22 +19,22 @@ namespace AlterSolutionTest.Service
         public async Task<int> CreateProduct(Product product)
         {
             product.Id = 0;
-            return await _productRepository.Insert(product);
+            return await _productRepository.InsertProduct(product);
         }
 
         public async Task<Product> GetProductById(int id)
         {
-            return await _productRepository.Get(id);
+            return await _productRepository.GetProductById(id);
         }
 
         public async Task<int> DeleteProduct(int id)
         {
-            return await _productRepository.Delete(id);
+            return await _productRepository.DeleteProduct(id);
         }
 
         public async Task<int> UpdateProduct(Product product)
         {
-            return await _productRepository.Update(product);
+            return await _productRepository.UpdateProduct(product);
         }
 
         public async Task<IEnumerable<Product>> GetPage(int page, int pageSize)

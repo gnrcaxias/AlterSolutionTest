@@ -19,14 +19,14 @@ namespace AlterSolutionTest.Repository.SqlServer.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<int> Delete(int id)
+        public async Task<int> DeleteProduct(int id)
         {
-            var product = await Get(id);
+            var product = await GetProductById(id);
             _dbContext.Entry(product).State = EntityState.Deleted;
             return await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<Product> Get(int id)
+        public async Task<Product> GetProductById(int id)
         {
             return await _dbContext.Set<Product>().FindAsync(id);
         }
@@ -37,13 +37,13 @@ namespace AlterSolutionTest.Repository.SqlServer.Repositories
             return await Task.Run(() => _dbContext.Product.Skip(skip).Take(pageSize).ToList());
         }
 
-        public async Task<int> Insert(Product entity)
+        public async Task<int> InsertProduct(Product entity)
         {
             _dbContext.Product.Add(entity);
             return await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<int> Update(Product entity)
+        public async Task<int> UpdateProduct(Product entity)
         {
             _dbContext.Entry(entity).State = EntityState.Modified;
             return await _dbContext.SaveChangesAsync();

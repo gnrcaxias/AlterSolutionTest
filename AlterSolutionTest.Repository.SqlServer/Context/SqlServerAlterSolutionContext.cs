@@ -13,7 +13,7 @@ namespace AlterSolutionTest.Repository.SqlServer.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=PLURALL-NOTE\SQLEXPRESS;Initial Catalog=AlterSolutionDB;Integrated Security=true;");
+            optionsBuilder.UseSqlServer(@"Data Source=.\SQLEXPRESS;Initial Catalog=AlterSolutionDB;Integrated Security=true;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

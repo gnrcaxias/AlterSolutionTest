@@ -8,10 +8,10 @@ namespace AlterSolutionTest.Domain.Repositories
 {
     public interface IProductRepository
     {
-        Task<int> Delete(int id);
-        Task<int> Insert(Product entity);
-        Task<int> Update(Product entity);
-        Task<Product> Get(int id);
+        Task<int> DeleteProduct(int id);
+        Task<int> InsertProduct(Product entity);
+        Task<int> UpdateProduct(Product entity);
+        Task<Product> GetProductById(int id);
         Task<IEnumerable<Product>> GetPage(int page, int pageSize);
     }
 }
